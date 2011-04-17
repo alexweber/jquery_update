@@ -1,5 +1,4 @@
 // $Id: tabledrag.js,v 1.1.2.1.2.3 2010/09/09 03:10:31 sun Exp $
-
 /**
  * Drag and drop table rows with field manipulation.
  *
@@ -77,11 +76,9 @@ Drupal.tableDrag = function(table, tableSettings) {
     // the offset, then remove.
     var indent = Drupal.theme('tableDragIndentation');
     // Match immediate children of the parent element to allow nesting.
-    var testCell = $('> tbody > tr.draggable:first td:first, > tr.draggable:first td:first', table);
-        testCell.prepend(indent);
-        testCell.prepend(indent);
-        this.indentAmount = $('.indentation', testCell).get(1).offsetLeft - $('.indentation', testCell).get(0).offsetLeft;
-        $('.indentation', testCell).slice(0, 2).remove();
+    var testCell = $('> tbody > tr.draggable:first td:first, > tr.draggable:first td:first', table).prepend(indent).prepend(indent);
+    this.indentAmount = $('.indentation', testCell).get(1).offsetLeft - $('.indentation', testCell).get(0).offsetLeft;
+    $('.indentation', testCell).slice(0, 2).remove();
   }
 
   // Make each applicable row draggable.
@@ -174,15 +171,13 @@ Drupal.tableDrag.prototype.makeDraggable = function(item) {
   // Create the handle.
   var handle = $('<a href="#" class="tabledrag-handle"><div class="handle">&nbsp;</div></a>').attr('title', Drupal.t('Drag to re-order'));
   // Insert the handle after indentations (if any).
-  //if ($('td:first .indentation:last', item).after(handle).size()) {
-  var td = $('td:first .indentation:last', item);
-  if (td.size()) {
-    td.after(handle);
-    // Update the total width of indentation in this entire table.
-    self.indentCount = Math.max($('.indentation', item).size(), self.indentCount);
+  
+  if($('td:first .indentation:last', item).length && $('td:first .indentation:last', item).after(handle).size()){
+	// Update the total width of indentation in this entire table.
+	self.indentCount = Math.max($('.indentation', item).size(), self.indentCount);
   }
   else {
-    $('td:first', item).prepend(handle);
+	$('td:first', item).prepend(handle);
   }
 
   // Add hover action for the handle.
@@ -970,7 +965,6 @@ Drupal.tableDrag.prototype.row.prototype.indent = function(indentDiff) {
   indent = Math.max(indent, this.interval.min);
   indent = Math.min(indent, this.interval.max);
   indentDiff = indent - this.indents;
-
   for (var n = 1; n <= Math.abs(indentDiff); n++) {
     // Add or remove indentations.
     if (indentDiff < 0) {

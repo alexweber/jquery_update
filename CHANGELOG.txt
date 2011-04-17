@@ -1,4 +1,12 @@
-// $Id: CHANGELOG.txt,v 1.3.2.1.2.6 2010/09/09 03:12:16 sun Exp $
+// $Id$
+
+jQuery Update 6.x-2.2
+---------------------
+- Updated to jQuery 1.5.2 and jQuery Form Plugin to 2.69
+
+jQuery Update 6.x-2.1
+---------------------------------
+- Updated to jQuery 1.5 (you have to apply the patch to /includes/common.inc)
 
 jQuery Update 6.x-2.x, xxxx-xx-xx
 ---------------------------------
