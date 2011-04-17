@@ -1,0 +1,24 @@
+diff --git includes/common.inc includes/common.inc
+index 5b250da..9968e76 100644
+--- includes/common.inc
++++ includes/common.inc
+@@ -2497,9 +2497,7 @@
+       return $var;
+     case 'resource':
+     case 'string':
+-      return '"'. str_replace(array("\r", "\n", "<", ">", "&"),
+-                              array('\r', '\n', '\x3c', '\x3e', '\x26'),
+-                              addslashes($var)) .'"';
++      return str_replace(array("<", ">", "&"), array('\u003c', '\u003e', '\u0026'), json_encode($var));
+     case 'array':
+       // Arrays in JSON can't be associative. If the array is empty or if it
+       // has sequential whole number keys starting with 0, it's not associative
+@@ -2534,7 +2532,7 @@
+  */
+ function drupal_json($var = NULL) {
+   // We are returning JavaScript, so tell the browser.
+-  drupal_set_header('Content-Type: text/javascript; charset=utf-8');
++  drupal_set_header('Content-Type: application/json; charset=utf-8');
+ 
+   if (isset($var)) {
+     echo drupal_to_js($var);
