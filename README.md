@@ -1,9 +1,11 @@
-This module is forked from jquery_update module http://drupal.org/project/jquery_update and implements the 1.5.2 port (http://drupal.org/node/1067290)
+# jQuery Update
+
+This module is forked from [jquery_update](http://drupal.org/project/jquery_update) module and implements [the 1.5.2 port](http://drupal.org/node/1067290)
 
 This module allows for jQuery 1.5.2 to be used with Drupal 6.
 
 - Requires a core hack to includes/common.inc to fix JSON formatting.
-- Allows jQuery UI 1.8.11 to be used, with https://github.com/alexweber/jquery_ui
+- Fits nicely with [jquery_ui](https://github.com/alexweber/jquery_ui) to enable jQuery UI 1.8.11
 - Updates jQuery Form Plugin to 2.69
 - Has been thoroughly tested with a lot of javascript-heavy websites and works flawlessly so far with everything I've thrown at it!
 
