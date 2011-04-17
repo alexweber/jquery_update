@@ -7,6 +7,7 @@ This module allows for jQuery 1.5.2 to be used with Drupal 6.
 - Requires a core hack to includes/common.inc to fix JSON formatting. [How to apply the patch](https://github.com/alexweber/jquery_update/wiki)
 - Fits nicely with [jquery_ui](https://github.com/alexweber/jquery_ui) to enable jQuery UI 1.8.11
 - Updates jQuery Form Plugin to 2.69
+- Includes patch for advagg_js_cdn
 - Has been thoroughly tested with a lot of javascript-heavy websites and works flawlessly so far with everything I've thrown at it!
 
 See:
