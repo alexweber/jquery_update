@@ -82,6 +82,9 @@ function jquery_update_preprocess_page(&$variables) {
       }
 
       $variables['scripts'] = drupal_get_js('header', $scripts);
+      
+      // keep original array for use with headjs & other modules that might need it
+      $variables['scripts_array'] = $scripts;
     }
   }
 }
