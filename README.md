@@ -10,9 +10,10 @@ This module allows for jQuery 1.5.2 to be used with Drupal 6.
 - Includes patch for advagg_js_cdn
 - Has been thoroughly tested with a lot of javascript-heavy websites and works flawlessly so far with everything I've thrown at it!
 
-See:
-http://drupal.org/node/806500
-http://drupal.org/node/1067290
-http://echodittolabs.org/blog/2010/08/drupal-6x-jquery-142-new-possibilities
-http://blog.harrspy.com/using-jquery142-in-druapl-6x
-http://blog.harrspy.com/fix-tabledrag-for-drupal6-with-jquery142
+References:
+
+- http://drupal.org/node/806500
+- http://drupal.org/node/1067290
+- http://echodittolabs.org/blog/2010/08/drupal-6x-jquery-142-new-possibilities
+- http://blog.harrspy.com/using-jquery142-in-druapl-6x
+- http://blog.harrspy.com/fix-tabledrag-for-drupal6-with-jquery142
