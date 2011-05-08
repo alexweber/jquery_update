@@ -1,5 +1,9 @@
 // $Id$
 
+jQuery Update 6.x-2.3
+---------------------
+- Updated to jQuery 1.6
+
 jQuery Update 6.x-2.2
 ---------------------
 - Updated to jQuery 1.5.2 and jQuery Form Plugin to 2.69

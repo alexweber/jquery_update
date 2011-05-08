@@ -118,12 +118,7 @@ Drupal.ahah = function(base, element_settings) {
  */
 Drupal.ahah.prototype.beforeSubmit = function (form_values, element, options) {
   // Disable the element that received the change.
-  // TODO something less tentative
-//  $(this.element).addClass('progress-disabled').attr('disabled', true);
-
-  // Since the submitted element is disabled, it doesn't get submitted, so lets create a hidden clone of it.
-  this.submitted_element = '<input type="hidden" id="ahah-submitted-element" name="' + $(this.element).attr('name') + '" value="' + $(this.element).val() + '" />';
-  $(this.element).after(this.submitted_element);
+  $(this.element).addClass('progress-disabled').attr('disabled', true);
 
   // Insert progressbar or throbber.
   if (this.progress.type == 'bar') {
@@ -161,9 +156,6 @@ Drupal.ahah.prototype.success = function (response, status) {
   form.attr('action', this.form_action);
   this.form_target ? form.attr('target', this.form_target) : form.removeAttr('target');
   this.form_encattr ? form.attr('target', this.form_encattr) : form.removeAttr('encattr');
-
-  // Remove the submitted clone element.
-  $('#ahah-submitted-element').remove();
 
   // Remove the progress element.
   if (this.progress.element) {
@@ -215,8 +207,6 @@ Drupal.ahah.prototype.error = function (response, uri) {
   alert(Drupal.ahahError(response, uri));
   // Resore the previous action and target to the form.
   $(this.element).parent('form').attr( { action: this.form_action, target: this.form_target} );
-  // Remove the submitted clone element.
-  $('#ahah-submitted-element').remove();
   // Remove the progress element.
   if (this.progress.element) {
     $(this.progress.element).remove();
