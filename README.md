@@ -2,6 +2,11 @@
 
 This module is forked from [jquery_update](http://drupal.org/project/jquery_update) module and implements [the 1.5.2 port](http://drupal.org/node/1067290)
 
+Instructions
+
+- If you are using [advagg](http://drupal.org/project/advagg), please apply the included patch.
+- If you are using Pressflow you are good, if not please apply the other patch!
+
 This module allows for jQuery 1.5.2 to be used with Drupal 6.
 
 - Requires a core hack to includes/common.inc to fix JSON formatting. [How to apply the patch](https://github.com/alexweber/jquery_update/wiki)
